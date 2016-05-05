@@ -676,7 +676,7 @@ body {
 
 @media only screen and (max-width: 400px) {
     .version-info {
-        overflow: scroll;
+        overflow: auto;
     }
 }
 
@@ -706,7 +706,7 @@ body {
 .version-info__separator {
     background-color: rgba(255, 255, 255, 0.5);
     margin: 20px 25px 45px 25px;
-    width: 1px;
+    min-width: 1px;
 }
 
 @media only screen and (max-width: 850px) {
