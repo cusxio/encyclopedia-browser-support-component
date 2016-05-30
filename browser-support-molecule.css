@@ -11,7 +11,6 @@
 body {
     font-size: 16px;
     line-height: 1.618em;
-    background-color: #f8f8f8
 }
 
 .browser-support {
@@ -55,7 +54,6 @@ body {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
-    background-color: #f8f8f8
 }
 
 @media only screen and (min-width:769px) {
@@ -68,7 +66,7 @@ body {
 }
 
 .cs__main hr {
-    margin: 60px 0;
+    margin: 45px 0;
     border: 0;
     border-top: 2px solid #e2dedf
 }
@@ -127,6 +125,10 @@ body {
     margin-top: 0
 }
 
+.cs__main--examples .example__container:nth-last-of-type(1) {
+    margin-bottom: 45px;
+}
+
 .cb {
     width: 100%
 }
@@ -135,44 +137,27 @@ body {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    margin-bottom: 20px
 }
 
 .cb__buttons__button {
-    border: 1px solid #3cdaf2;
-    border-radius: 4px;
-    color: #3cdaf2;
+    border-radius: 4px 4px 0 0;
+    color: #b7b7b7;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
-    margin-right: 6px;
-    padding: .5em 1em;
-    position: relative;
+    line-height: 1.5em;
+    padding: .75em 1em;
     text-align: center;
-    width: 150px
 }
 
 .cb__buttons__button--active {
-    background-color: #3cdaf2;
-    color: #f4f9fc
-}
-
-.cb__buttons__button--active:after {
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #3cdaf2;
-    content: '';
-    height: 0;
-    left: 65px;
-    position: absolute;
-    top: 100%;
-    width: 0
+    background-color: #f6f6f6;
+    color: #F665AD
 }
 
 .cb__code-container {
-    background-color: #f4f9fc;
-    border: 2px solid #3cdaf2;
-    border-radius: 4px;
+    background-color: #f6f6f6;
+    border-radius: 0 4px 4px;
     padding: 30px
 }
 
@@ -181,8 +166,37 @@ body {
 }
 
 .cb__code-container .code-container__code, .example__container .code-container__code {
-    font: 300 20px Roboto, sans-serif;
+    font: 16px Roboto, sans-serif;
     white-space: pre-wrap
+}
+
+.code-container__code--syntax .hl {
+    font-weight: 500;
+}
+
+.code-container__code--syntax .line-number {
+    color: #a5a5a5;
+    margin-right: 10px;
+}
+
+.code-container__code--syntax .keyword, .code-container__code--syntax .var-usage{
+    color: #fe8702;
+}
+
+.code-container__code--syntax .var-declare {
+    color: #4886fc;
+}
+
+.code-container__code--syntax .function-call {
+    color: #ac69ea;
+}
+
+.code-container__code--syntax .const-number {
+    color: #fd7676;
+}
+
+.code-container__code--syntax .comment {
+    color: #a5a5a5;
 }
 
 .tb {
@@ -255,6 +269,14 @@ body {
 
 .example__container__code-container, .explanation--margin {
     margin: 20px 2px
+}
+
+.tb__content .cb__buttons__button {
+    background-color: #f3f3fa;
+}
+
+.tb__content .cb__buttons__button--active, .tb__content .cb__code-container {
+    background-color: #ffffff;
 }
 
 .cs__main .tb {
@@ -379,6 +401,7 @@ body {
     text-align: center;
     width: 20px;
     height: 20px;
+    line-height: 20px;
     border-radius: 50%
 }
 
@@ -450,7 +473,6 @@ body {
 
 .cs__bs {
     padding-top: 45px;
-    background-color: #f8f8f8;
     -webkit-flex: 1 0 100%;
     -ms-flex: 1 0 100%;
     flex: 1 0 100%;
@@ -506,15 +528,15 @@ body {
 }
 
 .bs__container .bs__label .status .status--color {
-    width: 32px;
+    border-radius: 3px;
     height: 24px;
-    border-radius: 3px
+    width: 24px
 }
 
 .bs__container .bs__label .status .status--name {
     color: #777;
-    font-weight: 300;
     font-size: 15px;
+    font-weight: 500;
     margin-left: 10px
 }
 
@@ -568,9 +590,10 @@ body {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: center;
     -ms-flex-align: center;
-    align-items: center
+    -webkit-align-items: center;
+    align-items: center;
+    flex-basis: 175px;
 }
 
 .browser--name {
@@ -702,19 +725,18 @@ body {
 }
 
 .version-info__separator {
-    background-color: rgba(145, 147, 247, .3);
+    background-color: #EBEBEB;
     margin: 20px 25px 45px;
     min-width: 1px
 }
 
 @media only screen and (max-width:850px) {
     .version-info__separator {
-        background-color: hsla(0, 0%, 100%, .5);
+        background-color: #EBEBEB;
         height: 1px;
         margin-bottom: 25px;
         width: 100%;
         -webkit-align-self: center;
-        -ms-flex-item-align: center;
         align-self: center
     }
 }
@@ -726,8 +748,9 @@ body {
 }
 
 .version-info__section .note {
+    color: #b7b7b7;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 500;
     margin-top: auto
 }
 
@@ -817,7 +840,6 @@ body {
 .cs__footnote {
     padding-top: 25px;
     padding-bottom: 60px;
-    background-color: #f8f8f8;
     -webkit-flex: 1 0 100%;
     -ms-flex: 1 0 100%;
     flex: 1 0 100%;
@@ -861,7 +883,7 @@ body {
 
 .cs__footnote .references li a {
     text-decoration: none;
-    color: #45c2d5
+    color: #4b7de8
 }
 
 .cs__footnote .references h3, .cs__footnote .related h3 {
