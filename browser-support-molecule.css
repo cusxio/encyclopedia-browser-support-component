@@ -618,7 +618,7 @@ body {
     display: none
 }
 
-.browser--version .version label {
+.browser--version .version.partial-supported label {
     cursor: pointer;
     display: block;
     width: 100%;
