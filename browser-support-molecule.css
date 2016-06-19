@@ -150,7 +150,12 @@ body {
 .cb__code-container {
     background-color: #f6f6f6;
     border-radius: 0 4px 4px;
+    display: none;
     padding: 30px
+}
+
+.cb__code-container--active {
+    display: block
 }
 
 .cb__code-container .code-container__pre {

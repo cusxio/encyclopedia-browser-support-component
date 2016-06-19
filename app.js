@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', function cb() {
+
+    [].forEach.call(document.querySelectorAll('.cb__buttons__button'), function (el) {
+        el.addEventListener('click', function () {
+            if (!el.classList.contains('cb__buttons__button--active')) {
+                const buttons = el.parentNode.children;
+                const codeBoxChildren = el.parentNode.parentNode.children;
+                [].forEach.call(buttons, function (button, index) {
+                    if (button === el) {
+                        button.classList.add('cb__buttons__button--active');
+                        codeBoxChildren[index + 1].classList.add('cb__code-container--active');
+                    }
+                    else {
+                        button.classList.remove('cb__buttons__button--active');
+                        codeBoxChildren[index + 1].classList.remove('cb__code-container--active');
+                    }
+                });
+            }
+        })
+    });
+
     [].forEach.call(document.querySelectorAll('.tb--open'), function (el) {
         el.querySelector('.tb__content').style.display = 'block';
     });
