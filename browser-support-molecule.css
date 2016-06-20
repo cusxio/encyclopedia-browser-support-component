@@ -614,11 +614,18 @@ body {
     margin-right: 0
 }
 
-.browser--version .version input {
+.bs__version-radio {
     display: none
 }
 
-.browser--version .version label {
+.bs__version-radio + label {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.browser--version .version.partial-supported label {
     cursor: pointer;
     display: block;
     width: 100%;
@@ -792,7 +799,11 @@ body {
     font-weight: 300;
     position: absolute;
     right: 20px;
-    top: 23px
+    top: 23px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
 }
 
 @media only screen and (max-width:850px) {
