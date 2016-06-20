@@ -1,22 +1,7 @@
 document.addEventListener('DOMContentLoaded', function cb() {
 
     [].forEach.call(document.querySelectorAll('.cb__buttons__button'), function (el) {
-        el.addEventListener('click', function () {
-            if (!el.classList.contains('cb__buttons__button--active')) {
-                const buttons = el.parentNode.children;
-                const codeBoxChildren = el.parentNode.parentNode.children;
-                [].forEach.call(buttons, function (button, index) {
-                    if (button === el) {
-                        button.classList.add('cb__buttons__button--active');
-                        codeBoxChildren[index + 1].classList.add('cb__code-container--active');
-                    }
-                    else {
-                        button.classList.remove('cb__buttons__button--active');
-                        codeBoxChildren[index + 1].classList.remove('cb__code-container--active');
-                    }
-                });
-            }
-        })
+        el.addEventListener('click', codeBoxButtonClick);
     });
 
     [].forEach.call(document.querySelectorAll('.tb--open'), function (el) {
@@ -24,11 +9,7 @@ document.addEventListener('DOMContentLoaded', function cb() {
     });
 
     [].forEach.call(document.querySelectorAll('.tb__header'), function (el) {
-        el.addEventListener('click', function () {
-            var content = el.nextElementSibling;
-            var container = el.parentNode;
-            animate(content, container);
-        }, false);
+        el.addEventListener('click', animateToggleBox);
     });
 
     [].forEach.call(document.querySelectorAll('.version.partial-supported .bs__version-radio'), function (el) {
@@ -38,6 +19,23 @@ document.addEventListener('DOMContentLoaded', function cb() {
     [].forEach.call(document.querySelectorAll('.version-info__close'), function (el) {
         el.addEventListener('click', hideVersionAndContainer.bind(null, el.parentNode.id.slice(0, -5)));
     });
+
+    function codeBoxButtonClick(event) {
+        if (!event.target.classList.contains('cb__buttons__button--active')) {
+            const buttons = event.target.parentNode.children;
+            const codeBoxChildren = event.target.parentNode.parentNode.children;
+            [].forEach.call(buttons, function (button, index) {
+                if (button === event.target) {
+                    button.classList.add('cb__buttons__button--active');
+                    codeBoxChildren[index + 1].classList.add('cb__code-container--active');
+                }
+                else {
+                    button.classList.remove('cb__buttons__button--active');
+                    codeBoxChildren[index + 1].classList.remove('cb__code-container--active');
+                }
+            });
+        }
+    }
 
     function manageVersionClick(event) {
         event.target.removeEventListener('click', manageVersionClick);
@@ -104,7 +102,9 @@ document.addEventListener('DOMContentLoaded', function cb() {
         });
     }
 
-    function animate(content, container) {
+    function animateToggleBox(event) {
+        const content = event.target.nextElementSibling;
+        const container = event.target.parentNode;
         if (container.classList.contains('tb--open')) {
             container.classList.remove('tb--open');
             Velocity(content, "slideUp", {
