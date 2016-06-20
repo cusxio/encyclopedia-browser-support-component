@@ -4,10 +4,6 @@ document.addEventListener('DOMContentLoaded', function cb() {
         el.addEventListener('click', codeBoxButtonClick);
     });
 
-    [].forEach.call(document.querySelectorAll('.tb--open'), function (el) {
-        el.querySelector('.tb__content').style.display = 'block';
-    });
-
     [].forEach.call(document.querySelectorAll('.tb__header'), function (el) {
         el.addEventListener('click', animateToggleBox);
     });
@@ -103,17 +99,21 @@ document.addEventListener('DOMContentLoaded', function cb() {
     }
 
     function animateToggleBox(event) {
-        const content = event.target.nextElementSibling;
-        const container = event.target.parentNode;
+        const content = event.currentTarget.nextElementSibling;
+        const container = event.currentTarget.parentNode;
         if (container.classList.contains('tb--open')) {
-            container.classList.remove('tb--open');
             Velocity(content, "slideUp", {
-                duration: 400
+                duration: 400,
+                complete: function () {
+                    container.classList.remove('tb--open');
+                }
             });
         } else {
-            container.classList.add('tb--open');
             Velocity(content, "slideDown", {
-                duration: 400
+                duration: 400,
+                complete: function () {
+                    container.classList.add('tb--open');
+                }
             });
         }
     }
