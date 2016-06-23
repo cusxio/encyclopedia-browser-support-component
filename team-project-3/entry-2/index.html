@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="forms.css"/>
+    <meta charset="UTF-8">
+    <title>Strike Interactive Tool</title>
+</head>
+<body>
+<div>
+    <div class="coves-form">
+        <h1 class="coves-form__heading">Check to strike through the text</h1>
+        <div class="coves-form__checkbox-container">
+            <input id="strike" type="checkbox" name="strike" value="1" tabindex="1">
+            <label for="strike" class="coves-form__checkbox-container__fake-label coves-form__input--hover"><span
+                    class="fa fa-check fa-lg"
+                    aria-hidden="true"></span></label>
+            <label for="strike"
+                   class="coves-form__label coves-form__label--pointer coves-form__input--hover">Strike</label>
+        </div>
+    <textarea id="strike-text" name="text" rows="5"
+              class="coves-form__input coves-form__textarea coves-form__textarea--block coves-form__input--hover coves-form__input--focus"></textarea>
+    </div>
+</div>
+<script src="strike.js"></script>
+</body>
+</html>

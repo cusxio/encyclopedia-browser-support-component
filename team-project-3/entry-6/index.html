@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="forms.css"/>
+    <meta charset="UTF-8">
+    <title>charCodeAt Interactive Tool</title>
+</head>
+<body>
+<div class="coves-form">
+    <form method="post" action="#" novalidate>
+        <h1 class="coves-form__heading">Write a String and Select a Position</h1>
+        <div class="coves-form__input-container--row">
+            <label for="string" class="coves-form__label coves-form__label--right">String</label>
+            <input id="string"
+                   class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover"
+                   type="text" name="string" tabindex="1">
+        </div>
+        <div class="coves-form__input-container--row">
+            <label for="position" class="coves-form__label coves-form__label--right">Position</label>
+            <input id="position"
+                   class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover"
+                   type="number" name="position" value="0" step="1" tabindex="2">
+        </div>
+        <div class="coves-form__input-container--row">
+            <label for="char-code" class="coves-form__label coves-form__label--right">Char Code</label>
+      <textarea id="char-code" name="char-code"
+                class="coves-form__input coves-form__textarea coves-form__textarea--no-resize coves-form__input--hover"
+                rows="1" cols="6" readonly></textarea>
+        </div>
+    </form>
+</div>
+<script src="char-code-at.js"></script>
+</body>
+</html>
